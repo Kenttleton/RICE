@@ -1,0 +1,13 @@
+pub enum SERVER_ERROR_RESPONSES {
+    // General errors
+    ERR_NEEDMOREPARAMS,
+    // Password errors
+    ERR_ALREADYREGISTERED,
+    // Nickname errors
+    ERR_NONICKNAMEGIVEN,
+    ERR_ERRONEUSNICKNAME,
+    ERR_NICKNAMEINUSE,
+    ERR_NICKCOLLISION,
+    // User errors
+    ERR_ALREADYREGISTRED,
+}

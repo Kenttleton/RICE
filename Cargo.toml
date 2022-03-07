@@ -1,0 +1,24 @@
+[package]
+name = "rice"
+version = "0.1.0"
+authors = ["Kent Utterback <dev@kentutterback.com>"]
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+ctrlc = { version = "*", features = ["termination"] }
+redis = "*"
+chrono = { version = "0.4", features = ["serde"] }
+num_cpus = "*"
+regex = "*"
+uuid = { version = "0.8.2", features = ["v4"] }
+serde = {version = "*", features = ["derive"]}
+
+[[bin]]
+name = "rice-server"
+path = "src/server/main.rs"
+
+[[bin]]
+name = "rice-cli"
+path = "src/cli/main.rs"
