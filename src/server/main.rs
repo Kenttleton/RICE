@@ -5,9 +5,13 @@ use server::Server;
 
 fn main() {
     let configuration: Configuration = Configuration::new();
-    // TODO: Graceful Shutdown implementation
+    let server = Server::new();
     // Shutdown without error
-    ctrlc::set_handler(|| std::process::exit(0)).expect("Error setting Ctrl-C handler");
+    ctrlc::set_handler(|| {
+        server.kill();
+        std::process::exit(0)
+    })
+    .expect("Error setting Ctrl-C handler");
     // Initiate and run server
-    Server::new().bind(configuration).run();
+    server.bind(configuration).run();
 }

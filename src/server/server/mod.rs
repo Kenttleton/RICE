@@ -42,9 +42,10 @@ impl Server {
         }
     }
 
-    // pub fn kill(&mut self){
-    //     self.terminate = true;
-    // }
+    pub fn kill(&mut self) {
+        self.terminate = true;
+        // TODO close all connections
+    }
 }
 
 // fn stream_handler(mut stream: TcpStream) {
